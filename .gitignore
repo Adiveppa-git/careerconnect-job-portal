@@ -1,22 +1,20 @@
 # Python
+venv/
 __pycache__/
 *.pyc
 
-# Virtual Environment
-venv/
-
-# Environment Variables
+# Environment variables
 .env
 
 # Node
-node_modules/
+frontend/node_modules/
 
-# Build
-dist/
+# Build folders
+frontend/dist/
 
 # VS Code
 .vscode/
 
-# OS Files
+# OS files
 .DS_Store
 Thumbs.db

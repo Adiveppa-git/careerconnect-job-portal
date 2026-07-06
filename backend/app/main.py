@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config.settings import settings
 from app.database.client import client
 from app.routers import health
-
+from app.modules.auth.router import router as auth_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    client.close()
+    await client.close()
 
 
 app = FastAPI(
@@ -37,7 +37,7 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
-
+app.include_router(auth_router)
 
 @app.get("/")
 async def root():

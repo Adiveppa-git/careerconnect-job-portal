@@ -26,3 +26,8 @@ class UserRegisterSchema(BaseModel):
 class UserLoginSchema(BaseModel):
     email: EmailStr
     password: str = Field(..., min_length=8)
+
+
+class TokenSchema(BaseModel):
+    access_token: str
+    token_type: str = "bearer"

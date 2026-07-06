@@ -20,7 +20,6 @@ async def lifespan(app: FastAPI):
 
     await client.close()
 
-
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
